@@ -1,7 +1,8 @@
 ARG BUILD_FROM=python:3.12-alpine
 FROM ${BUILD_FROM}
 
-RUN pip3 install --no-cache-dir paho-mqtt requests PyYAML
+RUN apk add --no-cache python3 py3-pip && \
+    pip3 install --no-cache-dir --break-system-packages paho-mqtt requests PyYAML
 
 COPY run.sh /
 COPY dripdrop /dripdrop
