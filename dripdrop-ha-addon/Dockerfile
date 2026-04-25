@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base-python:3.11
+ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
 RUN pip3 install --no-cache-dir paho-mqtt requests PyYAML
