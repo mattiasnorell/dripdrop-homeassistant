@@ -2,15 +2,18 @@
 
 import json
 import logging
+import os
 import re
 import signal
 import sys
 import time
 from datetime import datetime, timezone
 
-from dripdrop.api import DripDropAPI
-from dripdrop.mqtt import MQTTClient
-from dripdrop import entities
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from api import DripDropAPI
+from mqtt import MQTTClient
+import entities
 
 logging.basicConfig(
     level=logging.INFO,
